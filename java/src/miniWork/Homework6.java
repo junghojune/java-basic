@@ -1,12 +1,12 @@
 package miniWork;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 public class Homework6 {
 
-    //TODO : 투표수 증가, 동률 당선 조작, 마지막 결과에 당선인 발표
     static Homework6 hw = new Homework6();
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Homework6 {
         String timeWinner = "";
         Random random = new Random();
 
-        while (vote != 10000) {
+        while (vote != 100000) {
             int chance = random.nextInt(4);
             switch (chance){
                 case 0:
@@ -54,16 +54,31 @@ public class Homework6 {
         }
     }
     public void calProbability(Map<String, Integer> candidate, int vote, String timeWinner){
-        double progress = (vote * 100) / 10000.0;
+        double progress = (vote * 100) / 100000.0;
 
         Double[] prob = {0.0,0.0,0.0,0.0};
 
-        prob[0] = (candidate.get("이재명") * 100) / 10000.0;
-        prob[1] = (candidate.get("윤석열") * 100) / 10000.0;
-        prob[2] = (candidate.get("심상정") * 100) / 10000.0;
-        prob[3] = (candidate.get("안철수") * 100) / 10000.0;
+        prob[0] = (candidate.get("이재명") * 100) / 100000.0;
+        prob[1] = (candidate.get("윤석열") * 100) / 100000.0;
+        prob[2] = (candidate.get("심상정") * 100) / 100000.0;
+        prob[3] = (candidate.get("안철수") * 100) / 100000.0;
 
         printResult(candidate, progress, prob, timeWinner, vote);
+    }
+
+    //TODO : 동률 당선 조작
+    public void setNotSameProbability(Map<String, Integer> candidate){
+        Integer maxVote = Collections.max(candidate.values());
+        String[] list = {"이재명", "윤석열", "심상정", "안철수"};
+        String winner = "";
+        for(String i : list){
+            if(candidate.get(i).equals(maxVote)){
+                winner = i;
+                break;
+            }
+        }
+
+        System.out.printf("[투표결과] 당선인: %s\n", winner);
     }
 
     public void printResult(Map<String, Integer> candidate , double progress, Double[] prob , String timeWinner, int vote){
@@ -77,5 +92,6 @@ public class Homework6 {
 
         System.out.printf("[기호:4] 안철수: %4.2f, (투표수: %d)\n",prob[3], candidate.get("안철수"));
 
+        setNotSameProbability(candidate);
     }
 }
