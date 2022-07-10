@@ -31,9 +31,9 @@ public class Homework7 {
             }
         }
 
-        winningNumber();
+        List<Integer> winningNumber = winningNumber();
 
-        compareMyToWinnig(winningNumber(), mylotto);
+        compareMyToWinnig(winningNumber, mylotto, number);
     }
 
     public List<Integer> winningNumber(){
@@ -46,6 +46,16 @@ public class Homework7 {
 
         List<Integer> list = new ArrayList<Integer>(set);
         Collections.sort(list);
+        System.out.println("\n[로또 발표]");
+
+        System.out.print("    ");
+        for (int k = 0; k < 6; k++) {
+            if (k < 5) {
+                System.out.printf("%02d,", list.get(k));
+            } else {
+                System.out.printf("%02d\n\n", list.get(k));
+            }
+        }
 
         return list;
 
@@ -65,8 +75,33 @@ public class Homework7 {
 
     }
 
-    public void compareMyToWinnig(List<Integer> winning, Map<Character, List<Integer>> select){
+    public void compareMyToWinnig(List<Integer> winning, Map<Character, List<Integer>> select, int number){
+
+        System.out.println("[내 로또 결과]");
 
 
+        for(int i=0; i< number; i++){
+            int count = 0;
+            char aski = (char) (i + 65);
+
+            System.out.print("" + aski + "   ");
+
+            List<Integer> myLottoResult = select.get(aski);
+
+
+            for(int k : winning){
+                if(myLottoResult.contains(k)){
+                    count++;
+                }
+            }
+
+            for(int j = 0; j<myLottoResult.size(); j++) {
+                if(j==5){
+                    System.out.printf("%02d ", myLottoResult.get(j));
+                }else
+                    System.out.printf("%02d,", myLottoResult.get(j));
+            }
+            System.out.printf(" => %d개 일치\n", count);
+        }
     }
 }
