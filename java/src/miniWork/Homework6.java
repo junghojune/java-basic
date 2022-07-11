@@ -70,13 +70,21 @@ public class Homework6 {
     public void setNotSameProbability(Map<String, Integer> candidate){
         Integer maxVote = Collections.max(candidate.values());
         String[] list = {"이재명", "윤석열", "심상정", "안철수"};
-        String winner = "";
-        for(String i : list){
+        String[] winner = new String[4];
+        String president = "";
+
+        for(int i =0; i<list.length; i++){
             if(candidate.get(i).equals(maxVote)){
-                winner = i;
-                break;
+                winner[i] = list[i];
             }
         }
+
+
+        if(winner.length == 1){
+            president = winner[0];
+        }else
+
+
 
         System.out.printf("[투표결과] 당선인: %s\n", winner);
     }
