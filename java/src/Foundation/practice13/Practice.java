@@ -1,4 +1,4 @@
-package Foundation.practice13;// Practice
+package Foundation.practice13;// dataStructureAlgorithm.practice.LinearDs.linearDs_02.Practice
 // 로또 번호 만들기
 
 import java.util.*;

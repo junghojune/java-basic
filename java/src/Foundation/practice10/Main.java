@@ -54,7 +54,7 @@ public class Main {
         Person p1 = new Person() {
             @Override
             public void printInfo() {
-                System.out.println("Main.printInfo");
+                System.out.println("dataStructureAlgorithm.practice.LinearDs.linearDs_02.Main.printInfo");
             }
         };
 

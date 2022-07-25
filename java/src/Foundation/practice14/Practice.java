@@ -1,4 +1,4 @@
-package Foundation.practice14;// Practice
+package Foundation.practice14;// dataStructureAlgorithm.practice.LinearDs.linearDs_02.Practice
 // 아래 인터페이스를 이용하여 익명클래스로 구현한 내용을 람다식으로 구현해보세요.
 
 interface CompareTool {

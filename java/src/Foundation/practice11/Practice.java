@@ -1,4 +1,4 @@
-package Foundation.practice11;// Practice
+package Foundation.practice11;// dataStructureAlgorithm.practice.LinearDs.linearDs_02.Practice
 // JamesArthurGosling.txt 파일을 읽은 후 원하는 단어 변경하여 새로 저장해보자.
 
 import java.io.BufferedReader;

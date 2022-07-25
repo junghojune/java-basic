@@ -1,4 +1,4 @@
-package Foundation.practice15;// Practice
+package Foundation.practice15;// dataStructureAlgorithm.practice.LinearDs.linearDs_02.Practice
 // 하기 예제를 스트림으로 구현해보세요.
 
 import java.util.stream.IntStream;
