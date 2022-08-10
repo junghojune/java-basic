@@ -7,7 +7,11 @@ public class Homework7 {
     static Homework7 hw7 = new Homework7();
 
     public static void main(String[] args) {
-        hw7.stater();
+
+
+        String hello = "hel??";
+
+        System.out.println(hello.substring(0,hello.indexOf("?")));
     }
 
     public void stater(){

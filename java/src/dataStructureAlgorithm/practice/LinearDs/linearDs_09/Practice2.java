@@ -26,7 +26,6 @@ public class Practice2 {
         ArrayList result = new ArrayList();
 
         IntStream.range(1, N + 1).forEach(x -> queue.add(x));
-
         int cnt = 0;
         while (!queue.isEmpty()) {
             int data = (int)queue.remove();
@@ -34,8 +33,7 @@ public class Practice2 {
             if (cnt % K == 0) {
                 result.add(data);
             } else {
-                queue.add(data);
-            }
+                queue.add(data);}
         }
 
         return result;
