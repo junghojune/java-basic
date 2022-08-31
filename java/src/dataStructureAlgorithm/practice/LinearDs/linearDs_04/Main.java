@@ -5,8 +5,8 @@ package dataStructureAlgorithm.practice.LinearDs.linearDs_04;// 선형 자료구
 class Node {
     int data;
     Node next;
-
     Node() {}
+
     Node(int data, Node next) {
         this.data = data;
         this.next = next;
